@@ -1,0 +1,51 @@
+.articles-list {
+  width: 80%;
+  margin: 10px 0;
+  max-width: 600px;
+  .MuiCard-root {
+    margin: 20px 0;
+    background-color: #d4f1f4;
+    color: #05445e;
+    position: relative;
+  }
+
+  .MuiChip-root {
+    margin: 4px 8px;
+  }
+
+  .MuiChip-label {
+    padding-bottom: 2px;
+  }
+  .MuiChip-colorPrimary {
+    background-color: #189ab4;
+    font-weight: 500;
+    color: #d4f1f4;
+  }
+
+  .tag-stack {
+    position: absolute;
+    z-index: 100;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .date {
+    color: #05445e;
+    font-weight: 500;
+  }
+  .card-title {
+    margin-bottom: 10px;
+    margin-top: 5px;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    .MuiCard-root {
+      margin: 20px auto;
+      width: 400px;
+    }
+  }
+}

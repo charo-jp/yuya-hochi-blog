@@ -1,0 +1,128 @@
+.post {
+  width: 100%;
+  height: auto;
+  background-color: #05445e;
+  color: #d4f1f4;
+  clip-path: polygon(0 20px, 100% 0, 100% calc(100% - 20px), 0 100%);
+  margin-top: -20px;
+  .post-article {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+
+    .post-header {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .post-title {
+      font-size: 30px;
+    }
+
+    .post-created-at {
+      margin: 10px 0;
+      font-weight: 500;
+    }
+    .MuiChip-root {
+      margin-bottom: 5px;
+      margin-right: 10px;
+    }
+
+    .MuiChip-label {
+      padding-bottom: 2px;
+    }
+
+    .MuiChip-colorPrimary {
+      background-color: #189ab4;
+      font-weight: 500;
+      color: #d4f1f4;
+    }
+
+    .tag-stack {
+      max-width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .back-to-prev {
+      display: none;
+    }
+
+    .markdown {
+      width: 100%;
+      margin-bottom: 20px;
+      li {
+        list-style-position: inside;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        margin: 30px 0;
+        line-height: 1.5rem;
+      }
+
+      p {
+        margin: 20px 0;
+        line-height: 1.5rem;
+      }
+
+      a {
+        color: #75e6da;
+        font-weight: 500;
+        position: relative;
+        &:hover {
+          color: #189ab4;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 1.5px;
+          background-color: #75e6da;
+          bottom: -1px;
+          left: 0;
+          z-index: 100;
+        }
+      }
+    }
+    @media screen and (min-width: 768px) {
+      .back-to-prev {
+        display: inline;
+        position: absolute;
+        color: #d4f1f4;
+        left: -1.5rem;
+        top: 40px;
+        svg {
+          height: 1.5rem;
+          width: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+// markdown backgrond css here
+.gatsby-highlight {
+  background-color: #75e6da;
+  border-radius: 0.3em;
+  margin: 0.5em 0;
+  padding: 1em;
+  width: 100%;
+}
+
+.gatsby-highlight pre[class*="language-"].line-numbers {
+  padding: 0;
+  padding-left: 2.8em;
+  overflow: auto;
+}

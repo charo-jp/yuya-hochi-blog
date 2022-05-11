@@ -1,0 +1,42 @@
+.posts {
+  width: 100%;
+  height: auto;
+
+  .posts-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #05445e;
+    color: #d4f1f4;
+    clip-path: polygon(0 20px, 100% 0, 100% calc(100% - 20px), 0 100%);
+    margin-top: -20px;
+    padding: 20px 0;
+    width: 100%;
+    .posts-tags-list {
+      max-width: 600px;
+      width: 80%;
+      margin: 20px 0;
+      .MuiPaper-root {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 5px;
+        background-color: #d4f1f4;
+      }
+
+      .MuiChip-root {
+        width: auto;
+        margin: 4px 8px;
+      }
+      .MuiChip-label {
+        padding-bottom: 2px;
+      }
+      .MuiChip-colorPrimary {
+        background-color: #189ab4;
+        font-weight: 500;
+        color: #d4f1f4;
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.blog-and-portfolio {
+  background-color: #189ab4;
+  color: #d4f1f4;
+  clip-path: polygon(0 20px, 100% 0, 100% calc(100% - 20px), 0 100%);
+  margin-top: -20px;
+  padding: 20px 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .home-content {
+    padding-bottom: 20px;
+  }
+
+  .BP-container {
+    width: 80%;
+    max-width: 600px;
+    margin-bottom: 20px;
+  }
+
+  .MuiCard-root {
+    background-color: #75e6da;
+    color: #05445e;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .MuiCardMedia-img {
+    padding-top: 10px;
+    margin: 0 auto;
+    width: 30%;
+    max-width: 80px;
+    min-width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

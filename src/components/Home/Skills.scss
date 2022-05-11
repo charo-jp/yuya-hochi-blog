@@ -1,0 +1,55 @@
+.skills {
+  color: #d4f1f4;
+  clip-path: polygon(0 20px, 100% 0, 100% calc(100% - 20px), 0 100%);
+  margin-top: -20px;
+  padding: 20px 0;
+  background-color: #05445e;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .language-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    max-width: 700px;
+  }
+
+  .card-media-container {
+    padding: 10px;
+  }
+
+  .MuiCard-root {
+    margin: 10px 5px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 300px;
+    background-color: #d4f1f4;
+  }
+
+  .MuiCardContent-root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #05445e;
+    font-size: 20px;
+  }
+  .MuiCardMedia-img {
+    width: 30%;
+    max-width: 80px;
+    min-width: 60px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .MuiCard-root {
+      margin: 10px;
+    }
+  }
+}
