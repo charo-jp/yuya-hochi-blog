@@ -1,6 +1,7 @@
 import React from "react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { graphql, Link } from "gatsby";
+import slugify from "slugify";
 import SEO from "../../components/SEO";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import getDate from "../../utils/getDate";
@@ -15,20 +16,28 @@ const BlogTemplate = ({ data }) => {
   const { title, createdAt, image } = data.contentfulBlog;
   const body = data.contentfulBlog.article.childMdx.body;
   const tags = getTags(data.contentfulBlog.metadata.tags);
+  const url = `blog/${slugify(title, { lower: true, remove: "." })}`;
   const description = data.contentfulBlog.description.description;
   const pathToImage = getImage(image);
+  const imageUrl = image.url;
   const createdTime = getDate(createdAt);
   const keywords = tags.join(", ");
   return (
     <Layout>
-      <SEO title={title} description={description} keywords={keywords} />
+      <SEO
+        title={title}
+        description={description}
+        keywords={keywords}
+        imageUrl={imageUrl}
+        url={url}
+      />
       <div className="post">
         <div className="post-article">
           <Link to="/blog" className="back-to-prev">
             <BsBoxArrowLeft />
           </Link>
           <div className="post-header">
-            <h2 className="post-title">{title}</h2>
+            <h1 className="post-title">{title}</h1>
             <p className="post-created-at">{createdTime}</p>
             <Stack className="tag-stack" direction="row" spacing={1}>
               {tags.map((tag, index) => {
@@ -68,6 +77,7 @@ export const query = graphql`
       title
       image {
         gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
+        url
       }
       article {
         childMdx {

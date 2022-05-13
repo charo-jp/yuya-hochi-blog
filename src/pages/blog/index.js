@@ -55,7 +55,7 @@ const Blog = () => {
       />
       <main className="posts">
         <div className="posts-container">
-          <h2>Blog</h2>
+          <h1>Blog</h1>
           <div className="posts-tags-list">
             <Paper>
               {blogTags &&

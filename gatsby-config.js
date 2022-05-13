@@ -5,7 +5,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: "Yuya Hochi",
-    description: "",
+    siteUrl: "https://yuya-hochi.netlify.app/",
   },
   plugins: [
     `gatsby-plugin-styled-components`,
@@ -14,6 +14,8 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     "gatsby-transformer-remark",
+    "gatsby-remark-images",
+    "gatsby-plugin-sitemap",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -31,7 +33,7 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: `5pq9gl4bq71e`,
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
         // Learn about environment variables: https://gatsby.dev/env-vars
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
         enableTags: true,
@@ -67,6 +69,12 @@ module.exports = {
             },
           },
           { resolve: "gatsby-remark-responsive-iframe" },
+          {
+            resolve: "gatsby-plugin-google-gtag",
+            options: {
+              trackingIds: [process.env.GA_TRACKING_ID],
+            },
+          },
         ],
       },
     },

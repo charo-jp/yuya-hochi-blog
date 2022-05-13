@@ -1,6 +1,7 @@
 import React from "react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { graphql, Link } from "gatsby";
+import slugify from "slugify";
 import SEO from "../../components/SEO";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import getDate from "../../utils/getDate";
@@ -11,24 +12,33 @@ import Stack from "@mui/material/Stack";
 import { BsBoxArrowLeft } from "react-icons/bs";
 
 import "../../assets/scss/post.scss";
+
 const PortfolioTemplate = ({ data }) => {
   const { title, createdAt, image } = data.contentfulPortfolio;
   const body = data.contentfulPortfolio.article.childMdx.body;
   const tags = getTags(data.contentfulPortfolio.metadata.tags);
+  const imageUrl = image.url;
+  const url = `portfolio/${slugify(title, { lower: true, remove: "." })}`;
   const description = data.contentfulPortfolio.description.description;
   const pathToImage = getImage(image);
   const createdTime = getDate(createdAt);
   const keywords = tags.join(", ");
   return (
     <Layout>
-      <SEO title={title} description={description} keywords={keywords} />
+      <SEO
+        title={title}
+        description={description}
+        keywords={keywords}
+        imageUrl={imageUrl}
+        url={url}
+      />
       <div className="post">
         <div className="post-article">
           <Link to="/portfolio" className="back-to-prev">
             <BsBoxArrowLeft />
           </Link>
           <div className="post-header">
-            <h2 className="post-title">{title}</h2>
+            <h1 className="post-title">{title}</h1>
             <p className="post-created-at">{createdTime}</p>
             <Stack className="tag-stack" direction="row" spacing={1}>
               {tags.map((tag, index) => {
@@ -68,6 +78,7 @@ export const query = graphql`
       title
       image {
         gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
+        url
       }
       article {
         childMdx {

@@ -54,7 +54,7 @@ const Portfolio = () => {
         />
         <main className="posts">
           <div className="posts-container">
-            <h2>Portfolio</h2>
+            <h1>Portfolio</h1>
             <div className="posts-tags-list">
               <Paper>
                 {portfolioTags &&
