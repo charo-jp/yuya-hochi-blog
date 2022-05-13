@@ -5,9 +5,18 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: "Yuya Hochi",
-    siteUrl: "https://yuya-hochi.netlify.app/",
+    siteUrl: "https://yuyahochi.com/",
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-google-gtag",
+      options: {
+        trackingIds: [process.env.GA_TRACKING_ID],
+        pluginConfig: {
+          head: true,
+        },
+      },
+    },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-image`,
@@ -69,15 +78,6 @@ module.exports = {
             },
           },
           { resolve: "gatsby-remark-responsive-iframe" },
-          {
-            resolve: "gatsby-plugin-google-gtag",
-            options: {
-              trackingIds: [process.env.GA_TRACKING_ID],
-              pluginConfig: {
-                head: true,
-              },
-            },
-          },
         ],
       },
     },

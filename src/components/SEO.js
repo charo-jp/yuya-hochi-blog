@@ -9,7 +9,7 @@ const SEO = ({
   imageUrl = "",
   url = "",
 }) => {
-  const siteUrl = "https://yuya-hochi.netlify.app/" + url;
+  const siteUrl = "https://yuyahochi.com/" + url;
   return (
     <Helmet
       htmlAttributes={{ lang: "en" }}
@@ -35,7 +35,7 @@ const SEO = ({
         },
         {
           rel: "canonical",
-          href: "https://yuya-hochi.netlify.app/",
+          href: "https://yuyahochi.com/",
         },
       ]}
     />
