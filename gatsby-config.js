@@ -17,6 +17,7 @@ module.exports = {
         },
       },
     },
+    "gatsby-plugin-react-helmet",
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-image`,
@@ -24,7 +25,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     "gatsby-transformer-remark",
     "gatsby-remark-images",
-    "gatsby-plugin-sitemap",
+    { resolve: "gatsby-plugin-sitemap", options: { output: "/" } },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

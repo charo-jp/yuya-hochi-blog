@@ -12,22 +12,23 @@ const SEO = ({
   const siteUrl = "https://yuyahochi.com/" + url;
   return (
     <Helmet
-      htmlAttributes={{ lang: "en" }}
-      title={`${title} | Yuya Hochi`}
       meta={[
+        { siteUrl: "https://yuyahochi.com/" },
         { name: "description", content: description },
         { name: "keywords", content: keywords },
-        { name: "twitter:card", value: "summary_large_image" },
-        { name: "twitter:creator", value: "@CharoYuya" },
-        { name: "twitter:site", value: "@CharoYuya" },
-        { name: "twitter:title", value: title },
-        { name: "twitter:description", value: description },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:creator", content: "@CharoYuya" },
+        { name: "twitter:site", content: "@CharoYuya" },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
         { property: "og:url", content: siteUrl },
         { property: "og:type", content: "article" },
         { property: "og:title", content: title },
         { property: "og:description", content: description },
         { property: "og:image", content: imageUrl },
       ]}
+      htmlAttributes={{ lang: "en" }}
+      title={`${title} | Yuya Hochi`}
       link={[
         {
           rel: "stylesheet",

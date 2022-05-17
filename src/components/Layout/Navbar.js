@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { StaticImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 import { FiAlignJustify } from "react-icons/fi";
 import Menu from "@mui/material/Menu";
@@ -24,7 +25,13 @@ const Navbar = () => {
         <div className="nav-header">
           <h1>
             <Link to="/" className="logo">
-              Yuya Hochi
+              <StaticImage
+                src="../../assets/images/Yuya Hochi-logo.png"
+                alt="Yuya Hochi"
+                className="logo-picture"
+                placeholder="blurred"
+                layout="constrained"
+              />
             </Link>
           </h1>
           <button className="nav-btn" onClick={handleClick}>

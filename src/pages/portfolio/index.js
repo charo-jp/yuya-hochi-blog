@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { useStaticQuery, graphql, Link } from "gatsby";
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
 import Layout from "../../components/Layout/Layout";
-import { Paper, Chip } from "@mui/material";
+import AllTags from "../../components/UIElements/AllTags";
 import Cards from "../../components/UIElements/Cards";
 import SEO from "../../components/SEO";
 import "../../assets/scss/posts.scss";
@@ -28,22 +28,6 @@ export const query = graphql`
 const Portfolio = () => {
   const data = useStaticQuery(query);
   const portfolios = data.allContentfulPortfolio.nodes;
-  const [portfolioTags, setPortfolioTags] = useState([]);
-  useEffect(() => {
-    const allTagsForPortfolio = [];
-
-    portfolios.forEach((node) => {
-      node.metadata.tags.forEach((contentful_id) => {
-        allTagsForPortfolio.push(contentful_id.contentful_id);
-      });
-    });
-
-    setPortfolioTags(
-      allTagsForPortfolio.filter(
-        (value, index) => allTagsForPortfolio.indexOf(value) === index
-      )
-    );
-  }, []);
   return (
     <div>
       <Layout>
@@ -55,24 +39,7 @@ const Portfolio = () => {
         <main className="posts">
           <div className="posts-container">
             <h1>Portfolio</h1>
-            <div className="posts-tags-list">
-              <Paper>
-                {portfolioTags &&
-                  portfolioTags.map((tag, index) => {
-                    return (
-                      <Chip
-                        key={index}
-                        label={tag}
-                        component={Link}
-                        to={`/portfolio/tags/${tag}`}
-                        clickable
-                        color="primary"
-                        size="medium"
-                      />
-                    );
-                  })}
-              </Paper>
-            </div>
+            <AllTags type="portfolio" />
             <Cards articles={portfolios} content="portfolio" />
           </div>
         </main>

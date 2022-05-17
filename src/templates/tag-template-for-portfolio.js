@@ -1,6 +1,7 @@
 import React from "react";
 import SEO from "../components/SEO";
 import Layout from "../components/Layout/Layout";
+import AllTags from "../components/UIElements/AllTags";
 import Cards from "../components/UIElements/Cards";
 import { graphql } from "gatsby";
 import "../assets/scss/post.scss";
@@ -17,7 +18,8 @@ const TagTemplateForPortfolio = ({ data, pageContext }) => {
       />
       <div className="posts">
         <div className="posts-container">
-          <h2>Portfolio Tag: {pageContext.tag}</h2>
+          <h1>Portfolio Tag: {pageContext.tag}</h1>
+          <AllTags type="portfolio" />
           <Cards articles={articles} content="portfolio" />
         </div>
       </div>

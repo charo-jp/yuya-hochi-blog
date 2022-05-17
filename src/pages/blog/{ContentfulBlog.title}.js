@@ -10,8 +10,8 @@ import Layout from "../../components/Layout/Layout";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 import { BsBoxArrowLeft } from "react-icons/bs";
-import "../../assets/scss/post.scss";
 
+import "../../assets/scss/post.scss";
 const BlogTemplate = ({ data }) => {
   const { title, createdAt, image } = data.contentfulBlog;
   const body = data.contentfulBlog.article.childMdx.body;

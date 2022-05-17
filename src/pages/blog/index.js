@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { useStaticQuery, graphql, Link } from "gatsby";
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
 import Layout from "../../components/Layout/Layout";
 import Cards from "../../components/UIElements/Cards";
+import AllTags from "../../components/UIElements/AllTags";
 import SEO from "../../components/SEO";
-import { Paper, Chip } from "@mui/material";
 
 import "../../assets/scss/posts.scss";
 export const query = graphql`
@@ -29,22 +29,6 @@ export const query = graphql`
 const Blog = () => {
   const data = useStaticQuery(query);
   const blogs = data.allContentfulBlog.nodes;
-  const [blogTags, setBlogTags] = useState([]);
-  useEffect(() => {
-    const allTagsForBlog = [];
-
-    blogs.forEach((node) => {
-      node.metadata.tags.forEach((contentful_id) => {
-        allTagsForBlog.push(contentful_id.contentful_id);
-      });
-    });
-
-    setBlogTags(
-      allTagsForBlog.filter(
-        (value, index) => allTagsForBlog.indexOf(value) === index
-      )
-    );
-  }, []);
 
   return (
     <Layout>
@@ -56,24 +40,7 @@ const Blog = () => {
       <main className="posts">
         <div className="posts-container">
           <h1>Blog</h1>
-          <div className="posts-tags-list">
-            <Paper>
-              {blogTags &&
-                blogTags.map((tag, index) => {
-                  return (
-                    <Chip
-                      key={index}
-                      label={tag}
-                      component={Link}
-                      to={`/blog/tags/${tag}`}
-                      clickable
-                      color="primary"
-                      size="medium"
-                    />
-                  );
-                })}
-            </Paper>
-          </div>
+          <AllTags type="blog" />
           <Cards articles={blogs} content="blog" />
         </div>
       </main>

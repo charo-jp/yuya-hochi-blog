@@ -4,6 +4,7 @@ import SEO from "../components/SEO";
 import Layout from "../components/Layout/Layout";
 import Cards from "../components/UIElements/Cards";
 import { graphql } from "gatsby";
+import AllTags from "../components/UIElements/AllTags";
 import "../assets/scss/post.scss";
 
 const TagTemplateForBlog = ({ data, pageContext }) => {
@@ -18,7 +19,8 @@ const TagTemplateForBlog = ({ data, pageContext }) => {
       />
       <div className="posts">
         <div className="posts-container">
-          <h2>Blog Tag: {pageContext.tag}</h2>
+          <h1>Blog Tag: {pageContext.tag}</h1>
+          <AllTags type="blog" />
           <Cards articles={articles} content="blog" />
         </div>
       </div>

@@ -1,0 +1,25 @@
+.posts-tags-list {
+  max-width: 600px;
+  width: 80%;
+  margin: 20px 0;
+  .MuiPaper-root {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 5px;
+    background-color: #d4f1f4;
+  }
+
+  .MuiChip-root {
+    width: auto;
+    margin: 4px 8px;
+  }
+  .MuiChip-label {
+    padding-bottom: 2px;
+  }
+  .MuiChip-colorPrimary {
+    background-color: #189ab4;
+    font-weight: 500;
+    color: #d4f1f4;
+  }
+}
