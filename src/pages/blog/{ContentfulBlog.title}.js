@@ -16,7 +16,7 @@ const BlogTemplate = ({ data }) => {
   const { title, createdAt, image } = data.contentfulBlog;
   const body = data.contentfulBlog.article.childMdx.body;
   const tags = getTags(data.contentfulBlog.metadata.tags);
-  const url = `blog/${slugify(title, { lower: true, remove: "[.?]/g" })}`;
+  const url = `blog/${slugify(title, { lower: true, remove: /[.\?]/ })}`;
   const description = data.contentfulBlog.description.description;
   const pathToImage = getImage(image);
   const imageUrl = image.url;

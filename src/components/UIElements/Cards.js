@@ -26,7 +26,7 @@ const Cards = ({ articles = [], content }) => {
         const tags = getTags(item.metadata.tags);
         const pathToImage = getImage(image);
         const createdTime = getDate(createdAt);
-        const slug = slugify(title, { lower: true, remove: "." });
+        const slug = slugify(title, { lower: true, remove: /[.\?]/ });
         return (
           <Card key={id}>
             <Stack className="tag-stack" direction="row" spacing={1}>
