@@ -17,7 +17,7 @@ const bpdata = [
     image: blogPic,
     to: "/blog",
     content:
-      "You can find articles mainly about Web Programming. In each post, it is clearly explained the concept that you want to learn.",
+      "You can find articles mainly about Web Programming. I post articles to improve my understanding. I explain as clearly as possible.",
   },
   {
     title: "Portfolio",
