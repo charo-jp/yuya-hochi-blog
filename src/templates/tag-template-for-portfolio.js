@@ -4,7 +4,7 @@ import Layout from "../components/Layout/Layout";
 import AllTags from "../components/UIElements/AllTags";
 import Cards from "../components/UIElements/Cards";
 import { graphql } from "gatsby";
-import "../assets/scss/post.scss";
+import "../assets/scss/posts.scss";
 
 const TagTemplateForPortfolio = ({ data, pageContext }) => {
   const articles = data.allContentfulPortfolio.nodes;

@@ -3,9 +3,9 @@ import { useStaticQuery, graphql, Link } from "gatsby";
 import { Paper, Chip } from "@mui/material";
 
 import "./AllTags.scss";
-const AllTags = ({ type }) => {
+const AllTags = ({ type, category = "" }) => {
   const data = useStaticQuery(query);
-  const allContents =
+  let allContents =
     type === "blog"
       ? data.allContentfulBlog.nodes
       : data.allContentfulPortfolio.nodes;
@@ -14,9 +14,17 @@ const AllTags = ({ type }) => {
     const allTags = [];
 
     allContents.forEach((node) => {
-      node.metadata.tags.forEach((contentful_id) => {
-        allTags.push(contentful_id.contentful_id);
-      });
+      if (type === "blog" && category !== "") {
+        if (node.category === category) {
+          node.metadata.tags.forEach((contentful_id) => {
+            allTags.push(contentful_id.contentful_id);
+          });
+        }
+      } else {
+        node.metadata.tags.forEach((contentful_id) => {
+          allTags.push(contentful_id.contentful_id);
+        });
+      }
     });
 
     setTags(allTags.filter((value, index) => allTags.indexOf(value) === index));
@@ -24,6 +32,7 @@ const AllTags = ({ type }) => {
 
   return (
     <div className="posts-tags-list">
+      <h2>Tags</h2>
       <Paper>
         {tags &&
           tags.map((tag, index) => {
@@ -54,6 +63,7 @@ export const query = graphql`
   {
     allContentfulBlog(sort: { fields: createdAt, order: DESC }) {
       nodes {
+        category
         metadata {
           tags {
             contentful_id

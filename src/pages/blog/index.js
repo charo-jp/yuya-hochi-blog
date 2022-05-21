@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import Layout from "../../components/Layout/Layout";
 import Cards from "../../components/UIElements/Cards";
 import AllTags from "../../components/UIElements/AllTags";
+import BlogCategories from "../../components/UIElements/BlogCategories";
 import SEO from "../../components/SEO";
 
 import "../../assets/scss/posts.scss";
@@ -40,6 +41,7 @@ const Blog = () => {
       <main className="posts">
         <div className="posts-container">
           <h1>Blog</h1>
+          <BlogCategories />
           <AllTags type="blog" />
           <Cards articles={blogs} content="blog" />
         </div>

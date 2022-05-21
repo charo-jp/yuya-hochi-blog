@@ -9,14 +9,20 @@ import "./Navbar.scss";
 
 const Navbar = () => {
   const [show, setShow] = useState(null);
-
   const open = Boolean(show);
+
   const handleClick = (event) => {
     setShow(event.currentTarget);
   };
 
   const handleClose = () => {
     setShow(null);
+  };
+
+  const [showCategories, setShowCategories] = useState(false);
+
+  const handleCategories = (event) => {
+    setShowCategories((prev) => !prev);
   };
 
   return (
@@ -80,6 +86,7 @@ const Navbar = () => {
               to="/contact"
               className="nav-item"
               activeClassName="active-link"
+              partiallyActive={true}
             >
               Contact
             </Link>

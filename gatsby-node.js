@@ -32,11 +32,25 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
+  const blogCategoriesResults = await graphql(`
+    query GetCategories {
+      allContentfulBlog {
+        nodes {
+          category
+        }
+      }
+    }
+  `);
+
   const blogTemplate = require.resolve(
     "./src/templates/tag-template-for-blog.js"
   );
   const portfolioTemplate = require.resolve(
     "./src/templates/tag-template-for-portfolio.js"
+  );
+
+  const blogCategoriesTemplate = require.resolve(
+    "./src/templates/category-template-for-blog.js"
   );
 
   // blog
@@ -59,6 +73,26 @@ exports.createPages = async ({ graphql, actions }) => {
       path: `/blog/tags/${tagSlug}`,
       component: blogTemplate,
       context: { tag: tag },
+    });
+  });
+
+  //blog categories
+  const allCategories = [];
+
+  blogCategoriesResults.data.allContentfulBlog.nodes.forEach((node) => {
+    allCategories.push(node.category);
+  });
+
+  const blogCategories = allCategories.filter(
+    (value, index) => allCategories.indexOf(value) === index
+  );
+
+  blogCategories.forEach((category) => {
+    const categorySlug = slugify(category, { lower: true });
+    createPage({
+      path: `/blog/category/${categorySlug}`,
+      component: blogCategoriesTemplate,
+      context: { category: category },
     });
   });
 

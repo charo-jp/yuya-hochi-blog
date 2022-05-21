@@ -1,7 +1,14 @@
 .posts-tags-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   max-width: 600px;
   width: 80%;
   margin: 20px 0;
+  h2 {
+    margin-bottom: 10px;
+  }
   .MuiPaper-root {
     display: flex;
     flex-wrap: wrap;
