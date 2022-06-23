@@ -11,7 +11,7 @@ import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 import { CardActionArea } from "@mui/material";
 
-import slugify from "slugify";
+import getSlugifiedTitle from "../../utils/getSlugifiedTitle";
 
 import "./Cards.scss";
 
@@ -23,10 +23,12 @@ const Cards = ({ articles = [], content }) => {
     <div className="articles-list">
       {articles.map((item) => {
         const { title, createdAt, image, id } = item;
+
         const tags = getTags(item.metadata.tags);
         const pathToImage = getImage(image);
         const createdTime = getDate(createdAt);
-        const slug = slugify(title, { lower: true, remove: /[.\?]/ });
+        const slug = getSlugifiedTitle(title);
+
         return (
           <Card key={id}>
             <Stack className="tag-stack" direction="row" spacing={1}>

@@ -1,6 +1,7 @@
 import React from "react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { graphql, Link } from "gatsby";
+import getSlugifiedTitle from "../../utils/getSlugifiedTitle";
 import slugify from "slugify";
 import SEO from "../../components/SEO";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
@@ -16,7 +17,7 @@ const BlogTemplate = ({ data }) => {
   const { title, createdAt, image } = data.contentfulBlog;
   const body = data.contentfulBlog.article.childMdx.body;
   const tags = getTags(data.contentfulBlog.metadata.tags);
-  const url = `blog/${slugify(title, { lower: true, remove: /[.\?]/ })}`;
+  const url = `blog/${getSlugifiedTitle(title)}`;
   const description = data.contentfulBlog.description.description;
   const pathToImage = getImage(image);
   const imageUrl = image.url;
