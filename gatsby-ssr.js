@@ -22,7 +22,3 @@ exports.onPreRenderHTML = function onPreRenderHTML({
 
   replaceHeadComponents(headComponents);
 };
-
-exports.wrapPageElement = ({ element, props }) => {
-  return <Layout {...props}>{element}</Layout>;
-};
