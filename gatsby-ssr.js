@@ -1,3 +1,5 @@
+const { default: Layout } = require("./src/components/Layout/Layout");
+
 exports.onPreRenderHTML = function onPreRenderHTML({
   getHeadComponents,
   replaceHeadComponents,
@@ -19,4 +21,8 @@ exports.onPreRenderHTML = function onPreRenderHTML({
   });
 
   replaceHeadComponents(headComponents);
+};
+
+exports.wrapPageElement = ({ element, props }) => {
+  return <Layout {...props}>{element}</Layout>;
 };

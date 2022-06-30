@@ -1,20 +1,23 @@
 import React, { useEffect, useState } from "react";
-import { useStaticQuery, graphql, Link } from "gatsby";
+import { useStaticQuery, graphql, Link, navigate } from "gatsby";
 import { Paper, Chip } from "@mui/material";
 
 import "./AllTags.scss";
-const AllTags = ({ type, category = "" }) => {
+const AllTags = ({ type, category = "", handleClickedTag }) => {
   const data = useStaticQuery(query);
   let allContents =
     type === "blog"
       ? data.allContentfulBlog.nodes
       : data.allContentfulPortfolio.nodes;
+
   const [tags, setTags] = useState([]);
+
+  let url = type === "blog" ? "/blog/tags/" : "/portfolio/tags/";
+
   useEffect(() => {
     const allTags = [];
-
     allContents.forEach((node) => {
-      if (type === "blog" && category !== "") {
+      if (type === "blog" && category) {
         if (node.category === category) {
           node.metadata.tags.forEach((contentful_id) => {
             allTags.push(contentful_id.contentful_id);
@@ -40,13 +43,15 @@ const AllTags = ({ type, category = "" }) => {
               <Chip
                 key={index}
                 label={tag}
-                component={Link}
-                to={
-                  type === "blog"
-                    ? `/blog/tags/${tag}`
-                    : `/portfolio/tags/${tag}`
-                }
+                component={category ? "a" : Link}
                 clickable
+                onClick={
+                  category
+                    ? () => handleClickedTag(tag)
+                    : () => {
+                        navigate(url + tag);
+                      }
+                }
                 color="primary"
                 size="medium"
               />

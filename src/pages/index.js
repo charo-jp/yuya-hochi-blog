@@ -8,7 +8,7 @@ import Charo from "../components/Home/Charo";
 import "./index.scss";
 import BlogAndPortfolio from "../components/Home/BlogAndPortfolio";
 
-export default function Home() {
+const Home = () => {
   return (
     <Layout>
       <SEO
@@ -24,4 +24,6 @@ export default function Home() {
       </main>
     </Layout>
   );
-}
+};
+
+export default Home;

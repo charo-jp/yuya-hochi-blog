@@ -2,7 +2,6 @@ import React from "react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { graphql, Link } from "gatsby";
 import getSlugifiedTitle from "../../utils/getSlugifiedTitle";
-import slugify from "slugify";
 import SEO from "../../components/SEO";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import getDate from "../../utils/getDate";

@@ -7,25 +7,6 @@ import BlogCategories from "../../components/UIElements/BlogCategories";
 import SEO from "../../components/SEO";
 
 import "../../assets/scss/posts.scss";
-export const query = graphql`
-  {
-    allContentfulBlog(sort: { fields: createdAt, order: DESC }) {
-      nodes {
-        title
-        createdAt
-        metadata {
-          tags {
-            contentful_id
-          }
-        }
-        image {
-          gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
-        }
-        id
-      }
-    }
-  }
-`;
 
 const Blog = () => {
   const data = useStaticQuery(query);
@@ -51,3 +32,23 @@ const Blog = () => {
 };
 
 export default Blog;
+
+export const query = graphql`
+  {
+    allContentfulBlog(sort: { fields: createdAt, order: DESC }) {
+      nodes {
+        title
+        createdAt
+        metadata {
+          tags {
+            contentful_id
+          }
+        }
+        image {
+          gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+        }
+        id
+      }
+    }
+  }
+`;
