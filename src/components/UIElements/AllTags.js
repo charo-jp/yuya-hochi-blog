@@ -3,7 +3,7 @@ import { useStaticQuery, graphql, Link, navigate } from "gatsby";
 import { Paper, Chip } from "@mui/material";
 
 import "./AllTags.scss";
-const AllTags = ({ type, category = "", handleClickedTag }) => {
+const AllTags = ({ type, category = "", handleClickedTag = () => {} }) => {
   const data = useStaticQuery(query);
   let allContents =
     type === "blog"
@@ -13,7 +13,7 @@ const AllTags = ({ type, category = "", handleClickedTag }) => {
   const [tags, setTags] = useState([]);
 
   let url = type === "blog" ? "/blog/tags/" : "/portfolio/tags/";
-
+  console.log(url);
   useEffect(() => {
     const allTags = [];
     allContents.forEach((node) => {
@@ -43,10 +43,10 @@ const AllTags = ({ type, category = "", handleClickedTag }) => {
               <Chip
                 key={index}
                 label={tag}
-                component={category ? "a" : Link}
+                component={"a"}
                 clickable
                 onClick={
-                  category
+                  !!category
                     ? () => handleClickedTag(tag)
                     : () => {
                         navigate(url + tag);
