@@ -2,7 +2,6 @@ import * as React from "react";
 import Layout from "../components/Layout/Layout";
 
 import About from "../components/Home/About";
-import Skills from "../components/Home/Skills";
 import SEO from "../components/SEO";
 import Charo from "../components/Home/Charo";
 import "./index.scss";
@@ -18,7 +17,6 @@ const Home = () => {
       />
       <main className="page">
         <About />
-        <Skills />
         <BlogAndPortfolio />
         <Charo />
       </main>
