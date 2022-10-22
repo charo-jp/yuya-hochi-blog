@@ -1,26 +1,14 @@
 import React from "react";
 import { Card, CardMedia, CardActionArea, CardHeader } from "@mui/material";
 import Layout from "../components/Layout/Layout";
-import twitter from "../assets/images/icons8-twitter-circled.svg";
-import facebook from "../assets/images/icons8-facebook.svg";
-import instagram from "../assets/images/icons8-instagram.svg";
+
+// add icons here
 import linkedin from "../assets/images/icons8-linkedin-circled.svg";
 import email from "../assets/images/icons8-mail.svg";
 import SEO from "../components/SEO";
 import "./contact.scss";
 
 const socialMediaData = [
-  { image: twitter, alt: "Twitter", href: "https://twitter.com/CharoYuya" },
-  {
-    image: facebook,
-    alt: "Facebook",
-    href: "https://www.facebook.com/yuya.hochi.73",
-  },
-  {
-    image: instagram,
-    alt: "Instagram",
-    href: "https://www.instagram.com/charo_charo1/",
-  },
   {
     image: linkedin,
     alt: "Linkedin",

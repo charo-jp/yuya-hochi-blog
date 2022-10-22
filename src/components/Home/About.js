@@ -18,8 +18,8 @@ const About = () => {
         <p>
           Hello, I am Yuya Hochi. I graduated with Mechanical Enginnering degree
           in Japan. But I decided to change my expertise to Computer Science.
-          Currently, I am preparing for learning Computer Science at the
-          University of Kent in the UK.
+          Currently, I am learning Computer Science at the University of Kent 
+          in the UK. 
         </p>
       </div>
     </div>
