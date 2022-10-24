@@ -13,7 +13,7 @@ const Home = () => {
       <SEO
         title="Home"
         description="Hello, I am Yuya Hochi. I write articles about programming in an understandable way. This is because it has been difficult for me to understand documentations. I explain things as clear as possible."
-        keywords="Yuya Hochi, 芳地祐哉, University of Kent, Computer Science Conversion"
+        keywords="Yuya Hochi, 芳地祐哉, University of Kent, Computer Science Conversion, Blog, React, JavaScritpt, Gatsby, Contentful"
       />
       <main className="page">
         <About />
