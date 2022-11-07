@@ -34,4 +34,8 @@ As a result, according to the lighthouse, I have achieved a 100 score for SEO.
 
 ## Further Improvements
 
+1. Design of the website 
+In a module that I am taking called “Human-Computer Interaction”, I was taught that designing a website before actually coding is a standard process. As a lo-fi prototype can be modified and I can reflect some changes quickly, creating a Lo-fi prototype is one thing that I should do in the next development or next update of this website.
 
+2. Comments 
+Although I did create this website by myself, it is always a great practice to have a comment above methods, etc. In this way, I can know what a method does in a short time rather than spending time looking at codes and thinking about what it does.
