@@ -113,7 +113,6 @@
       }
 
       table {
-        width: 80%;
        
         margin: auto;
         text-align: center;
@@ -128,6 +127,9 @@
       }
     }
     @media screen and (min-width: 768px) {
+      table {
+        width: 80%;
+      }
       .back-to-prev {
         display: inline;
         position: absolute;
