@@ -16,10 +16,10 @@ const About = () => {
 
       <div className="self-intro">
         <p>
-          Hello, I am Yuya Hochi. I graduated with Mechanical Enginnering degree
-          in Japan. But I decided to change my expertise to Computer Science.
-          Currently, I am learning Computer Science at the University of Kent 
-          in the UK. 
+        Hi, I am Yuya Hochi. I am a postgraduate student studying Computer Science
+        at the University of Kent. I changed my expertise from mechanical engineering
+        to computer science. I have been enjoying learning computer science and 
+        building projects.
         </p>
       </div>
     </div>

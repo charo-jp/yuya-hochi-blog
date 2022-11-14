@@ -17,14 +17,14 @@ const bpdata = [
     image: blogPic,
     to: "/blog",
     content:
-      "You can find articles mainly about Web Programming. I post articles to improve my understanding. I explain as clearly as possible.",
+      "There are four categories for blog: Programming, Technology, Life and Basketball. For programming and technology, I post articles to improve my understanding. I explain as clearly as possible.",
   },
   {
     title: "Portfolio",
     image: portfolioPic,
     to: "/portfolio",
     content:
-      "I have learning how to code by myself creating portfolios to acquire new skills. Here are some works that I have done.",
+      "I have been learning to code by myself and creating portfolios to acquire new skills. Here are some works that I have done.",
   },
 ];
 
