@@ -111,6 +111,21 @@
           overflow-x: auto;
         }
       }
+
+      table {
+        width: 80%;
+       
+        margin: auto;
+        text-align: center;
+        th, td {
+          height: 35px;
+          border: 1.5px solid #05445e;
+        }
+      }
+      
+      table, th, td {
+        border-collapse: collapse;
+      }
     }
     @media screen and (min-width: 768px) {
       .back-to-prev {
